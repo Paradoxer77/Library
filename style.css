@@ -65,7 +65,7 @@ main {
   color: #ff8781;
 }
 
-#delete {
+.delete {
   background-color: rgb(194, 27, 27);
   border-radius: 0;
   border: none;
@@ -73,11 +73,11 @@ main {
   padding: 10px;
 }
 
-#delete:hover {
+.delete:hover {
   background-color: rgb(255, 11, 11);
 }
 
-#read {
+.read {
   background-color: #f2bc94;
   color: #30110d;
   font-size: 1.5rem;
@@ -85,7 +85,7 @@ main {
   border-radius: 5px;
 }
 
-#read:hover {
+.read:hover {
   color: #f2bc94;
   background-color: #722620;
 }
@@ -95,7 +95,7 @@ main {
   margin: 5px;
 }
 
-#rating {
+.rating {
   width: 25%;
   text-align: center;
   margin: 10px;
