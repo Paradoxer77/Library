@@ -11,7 +11,7 @@ function addToLibrary() {
 
 }
 
-function addToDom() {
+function addToDom(bookTitle, bookAuthor, bookPages) {
   const main = document.querySelector("main")
 
   const card = document.createElement("div")
@@ -22,17 +22,17 @@ function addToDom() {
   const h2 = document.createElement("h2")
 
   h2.classList.add('info-text')
-  h2.textContent = "Jojo"
+  h2.textContent = bookTitle
   text.appendChild(h2)
 
   const h3 = document.createElement("h3")
   h3.classList.add('info-text')
-  h3.textContent = "Araki"
+  h3.textContent = bookAuthor
   text.appendChild(h3)
 
   const pages = document.createElement("span")
   pages.classList.add('info-text')
-  pages.textContent = "100"
+  pages.textContent = bookPages
   text.appendChild(pages)
 
   card.appendChild(text)
