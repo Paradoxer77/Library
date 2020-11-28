@@ -6,6 +6,7 @@
 body {
   background-image: linear-gradient(#104c91, #1f8ac0);
   background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 nav {
