@@ -83,3 +83,17 @@ function addToDom(bookTitle, bookAuthor, bookPages) {
   main.appendChild(card)
 }
 
+addToDom(1, 2, 3)
+addToDom(1, 2, 3)
+addToDom(1, 2, 3)
+addToDom(1, 2, 3)
+addToDom(1, 2, 3)
+addToDom(1, 2, 3)
+addToDom(1, 2, 3)
+
+const form = document.getElementById("form")
+const addBook = document.getElementById("add-book-plus")
+addBook.addEventListener('click', () => {
+  form.classList.toggle("form-display")
+  const card = document.getElementById("card")
+})

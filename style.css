@@ -107,7 +107,11 @@ main {
 
 /* Form elements */
 
-form {
+.no-display {
+  display: none;
+}
+
+.form-display {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
