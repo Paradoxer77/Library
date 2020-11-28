@@ -83,17 +83,17 @@ function addToDom(bookTitle, bookAuthor, bookPages) {
   main.appendChild(card)
 }
 
-addToDom(1, 2, 3)
-addToDom(1, 2, 3)
-addToDom(1, 2, 3)
-addToDom(1, 2, 3)
-addToDom(1, 2, 3)
-addToDom(1, 2, 3)
-addToDom(1, 2, 3)
 
 const form = document.getElementById("form")
 const addBook = document.getElementById("add-book-plus")
 addBook.addEventListener('click', () => {
   form.classList.toggle("form-display")
-  const card = document.getElementById("card")
 })
+
+
+function parseValues() {
+  const title = document.getElementById("title").value
+  const author = document.getElementById('author').value
+  const pages = document.getElementById('pages').value
+  addToDom(title, author, pages)
+}
