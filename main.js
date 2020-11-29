@@ -83,14 +83,6 @@ function addToDom(bookTitle, bookAuthor, bookPages) {
   main.appendChild(card)
 }
 
-
-const form = document.getElementById("form")
-const addBook = document.getElementById("add-book-plus")
-addBook.addEventListener('click', () => {
-  form.classList.add("form-display")
-})
-
-
 function parseValues() {
   const title = document.getElementById("title").value
   const author = document.getElementById('author').value
@@ -99,3 +91,14 @@ function parseValues() {
   form.classList.remove("form-display")
   form.reset()
 }
+
+const form = document.getElementById("form")
+const addBook = document.getElementById("add-book-plus")
+addBook.addEventListener('click', () => {
+  form.classList.add("form-display")
+})
+
+const cross = document.getElementById("cross")
+cross.addEventListener("click", () => {
+  form.classList.remove("form-display")
+})

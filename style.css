@@ -117,7 +117,7 @@ main {
   justify-content: space-evenly;
   border: 1px solid black;
   width: 300px;
-  margin: auto;
+  margin-top: 20px;
   align-items: center;
   font-size: 1.3em;
   background-color: #143d59;
@@ -203,4 +203,12 @@ label {
   font-size: 1.2em;
   border: 1px solid black;
   padding: 5px;
+}
+
+#cross {
+  margin-top: 10px;
+  background: transparent;
+  border: none;
+  vertical-align: middle;
+  padding-top: 5px;
 }
