@@ -86,15 +86,16 @@ function addToDom(bookTitle, bookAuthor, bookPages, bookIsRead) {
   deleteItem.appendChild(image)
   deleteItem.classList.add("delete")
 
-  deleteItem.addEventListener("click", () => {
-    deleteBook(card)
-  })
-
   deleteContainer.appendChild(deleteItem)
   card.appendChild(deleteContainer)
-
-
+  card.data
   main.appendChild(card)
+  card.dataset.index = library.length
+
+  deleteItem.addEventListener("click", () => {
+    card.remove(card)
+    library.splice(card.dataset.index)
+  })
 }
 
 function parseValues() {
@@ -102,19 +103,20 @@ function parseValues() {
   const author = document.getElementById('author').value
   const pages = document.getElementById('pages').value
   const isRead = document.getElementById("read-or-not").checked
-  addToDom(title, author, pages, isRead)
-  addToLibrary(title, author, pages, isRead)
-  form.classList.remove("form-display")
-  form.reset()
-}
-
-function deleteBook(card) {
-  card.remove(card)
+  if (!title || !author || !pages) {
+    alert("Empty field not is allowed!")
+  } else {
+    addToDom(title, author, pages, isRead)
+    addToLibrary(title, author, pages, isRead)
+    form.classList.remove("form-display")
+    form.reset()
+  }
 }
 
 const form = document.getElementById("form")
 const addBook = document.getElementById("add-book-plus")
 addBook.addEventListener('click', () => {
+
   form.classList.add("form-display")
 })
 
@@ -122,4 +124,3 @@ const cross = document.getElementById("cross")
 cross.addEventListener("click", () => {
   form.classList.remove("form-display")
 })
-
