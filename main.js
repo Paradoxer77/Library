@@ -87,7 +87,7 @@ function addToDom(bookTitle, bookAuthor, bookPages) {
 const form = document.getElementById("form")
 const addBook = document.getElementById("add-book-plus")
 addBook.addEventListener('click', () => {
-  form.classList.toggle("form-display")
+  form.classList.add("form-display")
 })
 
 
@@ -96,4 +96,6 @@ function parseValues() {
   const author = document.getElementById('author').value
   const pages = document.getElementById('pages').value
   addToDom(title, author, pages)
+  form.classList.remove("form-display")
+  form.reset()
 }
