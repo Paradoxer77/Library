@@ -7,11 +7,11 @@ function Book(name, author, pages, isRead) {
   this.isRead = isRead
 }
 
-function addToLibrary() {
-
+function addToLibrary(bTitle, bAuthor, bPages, bIsRead) {
+  library.push(new Book(bTitle, bAuthor, bPages, bIsRead))
 }
 
-function addToDom(bookTitle, bookAuthor, bookPages) {
+function addToDom(bookTitle, bookAuthor, bookPages, bookIsRead) {
   const main = document.querySelector("main")
 
   const card = document.createElement("div")
@@ -40,9 +40,20 @@ function addToDom(bookTitle, bookAuthor, bookPages) {
 
   const read = document.createElement("div")
   const buttonRead = document.createElement("button")
-
   buttonRead.classList.add("read")
-  buttonRead.textContent = "Read"
+  if (bookIsRead) {
+    buttonRead.textContent = "Read"
+  } else {
+    buttonRead.textContent = "Not Read"
+  }
+
+  buttonRead.addEventListener("click", () => {
+    if (buttonRead.textContent === "Read") {
+      buttonRead.textContent = "Not Read"
+    } else if (buttonRead.textContent === "Not Read") {
+      buttonRead.textContent = "Read"
+    }
+  })
 
   read.appendChild(buttonRead)
   card.appendChild(read)
@@ -75,6 +86,9 @@ function addToDom(bookTitle, bookAuthor, bookPages) {
   deleteItem.appendChild(image)
   deleteItem.classList.add("delete")
 
+  deleteItem.addEventListener("click", () => {
+    deleteBook(card)
+  })
 
   deleteContainer.appendChild(deleteItem)
   card.appendChild(deleteContainer)
@@ -87,9 +101,15 @@ function parseValues() {
   const title = document.getElementById("title").value
   const author = document.getElementById('author').value
   const pages = document.getElementById('pages').value
-  addToDom(title, author, pages)
+  const isRead = document.getElementById("read-or-not").checked
+  addToDom(title, author, pages, isRead)
+  addToLibrary(title, author, pages, isRead)
   form.classList.remove("form-display")
   form.reset()
+}
+
+function deleteBook(card) {
+  card.remove(card)
 }
 
 const form = document.getElementById("form")
@@ -102,3 +122,4 @@ const cross = document.getElementById("cross")
 cross.addEventListener("click", () => {
   form.classList.remove("form-display")
 })
+
